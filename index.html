@@ -327,15 +327,24 @@
     }
 
     .work-thumb {
+      position: relative;
       aspect-ratio: 16 / 9;
       background: linear-gradient(135deg, #dbe7ff, #fff7cf);
       overflow: hidden;
     }
 
     .work-thumb img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .work-thumb img.is-visible {
+      opacity: 1;
     }
 
     .work-body {
@@ -425,10 +434,11 @@
 
     .modal-content {
       width: min(100%, 760px);
+      max-height: 90vh;
       background: #fff;
       border-radius: 24px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-      overflow: hidden;
+      overflow-y: auto;
       position: relative;
       border: 4px solid var(--yellow);
       animation: popup 0.2s ease;
@@ -445,15 +455,24 @@
       }
     }
 
-    .modal-image {
+    .modal-images {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 8px;
+    }
+
+    .modal-images img {
       aspect-ratio: 16 / 9;
+      width: 100%;
+      object-fit: contain;
       background: #eee;
     }
 
-    .modal-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    @media (min-width: 600px) {
+      .modal-images {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     .modal-body {
@@ -585,80 +604,57 @@
 
         <div class="works-grid">
           <article class="work-card"
-            data-title="Sonic Dash Maker"
-            data-image="https://picsum.photos/800/450?random=21"
-            data-description="スピード感を重視した横スクロール型のアクションゲームです。プレイヤーは障害物を避けながらステージを駆け抜け、アイテム回収やタイムアタックに挑戦します。爽快感のある操作性と派手な演出を意識して制作しました。">
+            data-title="GOAT"
+            data-image="image/GOAT/タイトル.png"
+            data-images='["image/GOAT/タイトル.png","image/GOAT/戦闘開始.png","image/GOAT/戦闘風景その１.png","image/GOAT/戦闘風景その２.png","image/GOAT/戦闘風景その３.png","image/GOAT/戦闘風景その４.png"]'
+            data-description="1〜4人向けに制作した協力型アクションゲームです。強制スクロールのステージで、仲間と助け合いながらできるだけ長く生き残ることを目指します。">
             <div class="work-thumb">
-              <img src="https://picsum.photos/800/450?random=21" alt="作品1">
+              <img src="image/GOAT/タイトル.png" alt="GOATのタイトル画面">
             </div>
             <div class="work-body">
-              <h3>Sonic Dash Maker</h3>
-              <p>スピード感を重視した横スクロールアクションゲーム。</p>
+              <h3>GOAT</h3>
+              <p>羊を落とすボスファイトシューティング</p>
             </div>
           </article>
 
           <article class="work-card"
-            data-title="Dream Puzzle Land"
-            data-image="https://picsum.photos/800/450?random=22"
-            data-description="見た目のかわいらしさと、じっくり考える面白さを両立したパズルゲームです。マスの状態やギミックの配置を読みながら、最短手順でのクリアを目指します。子どもでも遊びやすいUIを意識しました。">
+            data-title="SaveAIT"
+            data-image="image/SaveAIT/AIT_title.png"
+            data-images='["image/SaveAIT/AIT_title.png","image/SaveAIT/AIT_play_scene1.png","image/SaveAIT/AIT_play_scene2.png","image/SaveAIT/AIT_play_scene3.png"]'
+            data-description="SaveAITのゲーム画面です。">
             <div class="work-thumb">
-              <img src="https://picsum.photos/800/450?random=22" alt="作品2">
+              <img src="image/SaveAIT/AIT_title.png" alt="SaveAITのタイトル画面">
             </div>
             <div class="work-body">
-              <h3>Dream Puzzle Land</h3>
-              <p>やさしい見た目と手応えのあるギミックが特徴のパズル作品。</p>
+              <h3>AITを守れ!</h3>
+              <p>愛知工業大学をロボットを操作して守ります。</p>
             </div>
           </article>
 
           <article class="work-card"
-            data-title="Ghost Signal"
-            data-image="https://picsum.photos/800/450?random=23"
-            data-description="探索と演出に重点を置いたホラーアドベンチャーです。暗い空間の中で手がかりを集めながら先へ進み、音や光の演出によって不安感を高める構成にしました。短時間でも印象に残る体験を目指しています。">
+            data-title="Space Shooting"
+            data-image="image/Space Shooting/スクリーンショット (1).png"
+            data-images='["image/Space Shooting/スクリーンショット (1).png","image/Space Shooting/スクリーンショット (2).png"]'
+            data-description="Space Shootingのゲーム画面です。">
             <div class="work-thumb">
-              <img src="https://picsum.photos/800/450?random=23" alt="作品3">
+              <img src="image/Space Shooting/スクリーンショット (1).png" alt="Space Shootingのスクリーンショット">
             </div>
             <div class="work-body">
-              <h3>Ghost Signal</h3>
-              <p>音と光の演出で魅せる探索型ホラーアドベンチャー。</p>
+              <h3>Space Shooting</h3>
+              <p>宇宙船を操作して敵の艦隊を倒すシューティングゲーム。</p>
             </div>
           </article>
 
           <article class="work-card"
-            data-title="Sky Rhythm"
-            data-image="https://picsum.photos/800/450?random=24"
-            data-description="楽曲に合わせてキャラクターを操作するリズムゲームです。テンポに合わせた演出や背景変化によって、プレイしていて気持ちよい感覚を大切にしました。初心者向けと上級者向けの譜面を用意しています。">
+            data-title="展示用アクションゲーム2026"
+            data-image="image/展示用アクションゲーム2026/スクショ1.png"
+            data-description="展示用アクションゲーム2026のスクリーンショットです。">
             <div class="work-thumb">
-              <img src="https://picsum.photos/800/450?random=24" alt="作品4">
+              <img src="image/展示用アクションゲーム2026/スクショ1.png" alt="展示用アクションゲーム2026のスクリーンショット">
             </div>
             <div class="work-body">
-              <h3>Sky Rhythm</h3>
-              <p>音楽と演出が連動するポップなリズムゲーム。</p>
-            </div>
-          </article>
-
-          <article class="work-card"
-            data-title="Box Frontier"
-            data-image="https://picsum.photos/800/450?random=25"
-            data-description="協力プレイをテーマにした対戦・共闘型のアクション作品です。2人以上でのプレイを想定し、それぞれの役割が自然に生まれるように設計しました。イベント展示でも盛り上がりやすい構成を意識しています。">
-            <div class="work-thumb">
-              <img src="https://picsum.photos/800/450?random=25" alt="作品5">
-            </div>
-            <div class="work-body">
-              <h3>Box Frontier</h3>
-              <p>協力と連携の面白さを重視したマルチプレイ作品。</p>
-            </div>
-          </article>
-
-          <article class="work-card"
-            data-title="Color Burst"
-            data-image="https://picsum.photos/800/450?random=26"
-            data-description="色の切り替えや視認性の変化を活かしたアート寄りのインタラクティブ作品です。映像表現と操作の気持ちよさの両方にこだわり、見るだけでなく触って楽しいコンテンツとして制作しました。">
-            <div class="work-thumb">
-              <img src="https://picsum.photos/800/450?random=26" alt="作品6">
-            </div>
-            <div class="work-body">
-              <h3>Color Burst</h3>
-              <p>ビジュアル表現を楽しめるインタラクティブコンテンツ。</p>
+              <h3>展示用アクションゲーム2026(仮)</h3>
+              <p>4人マルチプレイで足場を飛ばして生き残れ。</p>
             </div>
           </article>
         </div>
@@ -686,9 +682,7 @@
   <div class="modal" id="workModal">
     <div class="modal-content">
       <button class="modal-close" id="modalClose" aria-label="閉じる">✕</button>
-      <div class="modal-image">
-        <img id="modalImage" src="" alt="作品詳細画像">
-      </div>
+      <div class="modal-images" id="modalImages"></div>
       <div class="modal-body">
         <h3 id="modalTitle"></h3>
         <p id="modalDescription"></p>
@@ -700,15 +694,69 @@
     const workCards = document.querySelectorAll('.work-card');
     const modal = document.getElementById('workModal');
     const modalTitle = document.getElementById('modalTitle');
-    const modalImage = document.getElementById('modalImage');
+    const modalImages = document.getElementById('modalImages');
     const modalDescription = document.getElementById('modalDescription');
     const modalClose = document.getElementById('modalClose');
 
     workCards.forEach(card => {
+      const thumb = card.querySelector('.work-thumb');
+      const firstImage = thumb.querySelector('img');
+      const images = JSON.parse(card.dataset.images || JSON.stringify([firstImage.getAttribute('src')]));
+      firstImage.classList.add('is-visible');
+      if (images.length < 2) return;
+
+      images.forEach(src => {
+        const preload = new Image();
+        preload.src = src;
+      });
+
+      const secondImage = firstImage.cloneNode();
+      secondImage.removeAttribute('class');
+      thumb.appendChild(secondImage);
+
+      let currentIndex = 0;
+      let visibleImage = firstImage;
+      let hiddenImage = secondImage;
+      let slideTimer = null;
+
+      const showNextImage = () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        hiddenImage.src = images[currentIndex];
+        hiddenImage.classList.add('is-visible');
+        visibleImage.classList.remove('is-visible');
+        [visibleImage, hiddenImage] = [hiddenImage, visibleImage];
+      };
+
+      card.addEventListener('mouseenter', () => {
+        if (slideTimer !== null) return;
+        showNextImage();
+        slideTimer = window.setInterval(showNextImage, 3500);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        window.clearInterval(slideTimer);
+        slideTimer = null;
+        if (currentIndex !== 0) {
+          hiddenImage.src = images[0];
+          hiddenImage.classList.add('is-visible');
+          visibleImage.classList.remove('is-visible');
+          [visibleImage, hiddenImage] = [hiddenImage, visibleImage];
+          currentIndex = 0;
+        }
+      });
+    });
+
+    workCards.forEach(card => {
       card.addEventListener('click', () => {
         modalTitle.textContent = card.dataset.title;
-        modalImage.src = card.dataset.image;
-        modalImage.alt = card.dataset.title;
+        const images = JSON.parse(card.dataset.images || JSON.stringify([card.dataset.image]));
+        modalImages.replaceChildren(...images.map((src, index) => {
+          const image = document.createElement('img');
+          image.src = src;
+          image.alt = `${card.dataset.title}のスクリーンショット ${index + 1}`;
+          image.loading = 'lazy';
+          return image;
+        }));
         modalDescription.textContent = card.dataset.description;
         modal.classList.add('active');
       });
