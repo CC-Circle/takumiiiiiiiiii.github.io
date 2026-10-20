@@ -151,7 +151,8 @@
     .brand-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      padding: 8px;
     }
 
     .brand-text h1 {
@@ -556,7 +557,7 @@
       <div class="header-card">
         <div class="brand">
           <div class="brand-image">
-            <img src="https://picsum.photos/200/200?random=10" alt="サークルアイコン">
+            <img src="image/Logos/CCC_rogo.svg" alt="コンテンツクリエーションサークルのロゴ">
           </div>
           <div class="brand-text">
             <h1>コンテンツクリエーションサークル</h1>
@@ -605,11 +606,11 @@
         <div class="works-grid">
           <article class="work-card"
             data-title="GOAT"
-            data-image="image/GOAT/タイトル.png"
-            data-images='["image/GOAT/タイトル.png","image/GOAT/戦闘開始.png","image/GOAT/戦闘風景その１.png","image/GOAT/戦闘風景その２.png","image/GOAT/戦闘風景その３.png","image/GOAT/戦闘風景その４.png"]'
+            data-image="image/Games/GOAT/タイトル.png"
+            data-images='["image/Games/GOAT/タイトル.png","image/Games/GOAT/戦闘開始.png","image/Games/GOAT/戦闘風景その１.png","image/Games/GOAT/戦闘風景その２.png","image/Games/GOAT/戦闘風景その３.png","image/Games/GOAT/戦闘風景その４.png"]'
             data-description="1〜4人向けに制作した協力型アクションゲームです。強制スクロールのステージで、仲間と助け合いながらできるだけ長く生き残ることを目指します。">
             <div class="work-thumb">
-              <img src="image/GOAT/タイトル.png" alt="GOATのタイトル画面">
+              <img src="image/Games/GOAT/タイトル.png" alt="GOATのタイトル画面">
             </div>
             <div class="work-body">
               <h3>GOAT</h3>
@@ -619,11 +620,11 @@
 
           <article class="work-card"
             data-title="SaveAIT"
-            data-image="image/SaveAIT/AIT_title.png"
-            data-images='["image/SaveAIT/AIT_title.png","image/SaveAIT/AIT_play_scene1.png","image/SaveAIT/AIT_play_scene2.png","image/SaveAIT/AIT_play_scene3.png"]'
+            data-image="image/Games/SaveAIT/AIT_title.png"
+            data-images='["image/Games/SaveAIT/AIT_title.png","image/Games/SaveAIT/AIT_play_scene1.png","image/Games/SaveAIT/AIT_play_scene2.png","image/Games/SaveAIT/AIT_play_scene3.png"]'
             data-description="SaveAITのゲーム画面です。">
             <div class="work-thumb">
-              <img src="image/SaveAIT/AIT_title.png" alt="SaveAITのタイトル画面">
+              <img src="image/Games/SaveAIT/AIT_title.png" alt="SaveAITのタイトル画面">
             </div>
             <div class="work-body">
               <h3>AITを守れ!</h3>
@@ -633,11 +634,11 @@
 
           <article class="work-card"
             data-title="Space Shooting"
-            data-image="image/Space Shooting/スクリーンショット (1).png"
-            data-images='["image/Space Shooting/スクリーンショット (1).png","image/Space Shooting/スクリーンショット (2).png"]'
+            data-image="image/Games/Space Shooting/スクリーンショット (1).png"
+            data-images='["image/Games/Space Shooting/スクリーンショット (1).png","image/Games/Space Shooting/スクリーンショット (2).png"]'
             data-description="Space Shootingのゲーム画面です。">
             <div class="work-thumb">
-              <img src="image/Space Shooting/スクリーンショット (1).png" alt="Space Shootingのスクリーンショット">
+              <img src="image/Games/Space Shooting/スクリーンショット (1).png" alt="Space Shootingのスクリーンショット">
             </div>
             <div class="work-body">
               <h3>Space Shooting</h3>
@@ -647,10 +648,10 @@
 
           <article class="work-card"
             data-title="展示用アクションゲーム2026"
-            data-image="image/展示用アクションゲーム2026/スクショ1.png"
+            data-image="image/Games/展示用アクションゲーム2026/スクショ1.png"
             data-description="展示用アクションゲーム2026のスクリーンショットです。">
             <div class="work-thumb">
-              <img src="image/展示用アクションゲーム2026/スクショ1.png" alt="展示用アクションゲーム2026のスクリーンショット">
+              <img src="image/Games/展示用アクションゲーム2026/スクショ1.png" alt="展示用アクションゲーム2026のスクリーンショット">
             </div>
             <div class="work-body">
               <h3>展示用アクションゲーム2026(仮)</h3>
@@ -730,7 +731,7 @@
       card.addEventListener('mouseenter', () => {
         if (slideTimer !== null) return;
         showNextImage();
-        slideTimer = window.setInterval(showNextImage, 3500);
+        slideTimer = window.setInterval(showNextImage, 1000);
       });
 
       card.addEventListener('mouseleave', () => {
